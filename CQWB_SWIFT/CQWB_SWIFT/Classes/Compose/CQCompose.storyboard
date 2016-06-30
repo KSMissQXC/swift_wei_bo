@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="s2P-yc-hCR">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="BRO-11-fYh">
+            <objects>
+                <navigationController id="s2P-yc-hCR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cnD-jX-eIy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xFP-rf-iLm" kind="relationship" relationship="rootViewController" id="ERy-d7-7Il"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1a4-ij-CQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818" y="-48"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="pU3-UL-Qa4">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xFP-rf-iLm" customClass="CQComposeViewController" customModule="CQWB_SWIFT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WUI-ES-SgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="agm-09-Yzg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z3G-d8-qYb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2rb-pf-Fpd" customClass="CQComposeTextView" customModule="CQWB_SWIFT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xFP-rf-iLm" id="7md-UL-9pj"/>
+                                </connections>
+                            </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbg-gr-mRW">
+                                <rect key="frame" x="0.0" y="590" width="600" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="m5n-4Z-3NT"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="mrc-QV-eIc" kind="embed" identifier="photoPicker" id="25T-hj-hoc"/>
+                                </connections>
+                            </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmA-ZM-OLZ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vna-OG-KTi"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem image="compose_toolbar_picture" id="1fk-Qd-seU">
+                                        <connections>
+                                            <action selector="photoClick:" destination="xFP-rf-iLm" id="xoJ-Uy-KQL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jd4-rK-x4D"/>
+                                    <barButtonItem image="compose_mentionbutton_background" id="hNn-5P-aIf"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cv9-If-lg0"/>
+                                    <barButtonItem image="compose_trendbutton_background" id="iDn-tb-ljy"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FDQ-Pb-YBK"/>
+                                    <barButtonItem image="compose_emoticonbutton_background" id="Gwu-z9-Iob">
+                                        <connections>
+                                            <action selector="emotionBtnClick:" destination="xFP-rf-iLm" id="TZI-4F-Gm8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gIM-Ai-ZnQ"/>
+                                    <barButtonItem image="compose_addbutton_background" id="qsY-3f-UcO"/>
+                                </items>
+                                <color key="tintColor" red="0.56470588239999997" green="0.56470588239999997" blue="0.56470588239999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hbg-gr-mRW" secondAttribute="trailing" id="54o-Kp-cwO"/>
+                            <constraint firstItem="2rb-pf-Fpd" firstAttribute="top" secondItem="WUI-ES-SgS" secondAttribute="bottom" id="8Wz-Sn-ihO"/>
+                            <constraint firstItem="dmA-ZM-OLZ" firstAttribute="leading" secondItem="z3G-d8-qYb" secondAttribute="leading" id="Oh9-Hm-rA0"/>
+                            <constraint firstItem="agm-09-Yzg" firstAttribute="top" secondItem="2rb-pf-Fpd" secondAttribute="bottom" id="Q8L-BG-xIL"/>
+                            <constraint firstAttribute="trailing" secondItem="2rb-pf-Fpd" secondAttribute="trailing" id="XuR-ar-N7D"/>
+                            <constraint firstItem="agm-09-Yzg" firstAttribute="top" secondItem="dmA-ZM-OLZ" secondAttribute="bottom" id="h7n-c0-LUY"/>
+                            <constraint firstItem="hbg-gr-mRW" firstAttribute="leading" secondItem="z3G-d8-qYb" secondAttribute="leading" id="hKd-Ut-hVi"/>
+                            <constraint firstItem="2rb-pf-Fpd" firstAttribute="leading" secondItem="z3G-d8-qYb" secondAttribute="leading" id="o3V-ZA-aPx"/>
+                            <constraint firstAttribute="trailing" secondItem="dmA-ZM-OLZ" secondAttribute="trailing" id="r3o-HA-dju"/>
+                            <constraint firstAttribute="bottom" secondItem="hbg-gr-mRW" secondAttribute="bottom" id="x4S-Oj-E97"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wyp-Tz-hc5">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="关闭" id="1MB-2a-29b">
+                            <connections>
+                                <action selector="closeClick:" destination="xFP-rf-iLm" id="BMw-GH-OKh"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="QO4-3R-ZM1" customClass="CQComposeTitleView" customModule="CQWB_SWIFT" customModuleProvider="target">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="发送" id="Fpi-ij-UfZ">
+                            <connections>
+                                <action selector="sendClick:" destination="xFP-rf-iLm" id="PQ2-Ue-HyH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="containViewHeight" destination="m5n-4Z-3NT" id="W7M-Qg-SKr"/>
+                        <outlet property="sendItem" destination="Fpi-ij-UfZ" id="inW-fY-Jxw"/>
+                        <outlet property="textView" destination="2rb-pf-Fpd" id="nUh-kK-e5k"/>
+                        <outlet property="toolBarlBottomDistance" destination="h7n-c0-LUY" id="sJ7-GK-MgZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXI-D5-WBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1577" y="-57"/>
+        </scene>
+        <!--Photo Picker Collection View Controller-->
+        <scene sceneID="FFn-xh-R3X">
+            <objects>
+                <collectionViewController id="mrc-QV-eIc" customClass="CQPhotoPickerCollectionViewController" customModule="CQWB_SWIFT" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="E1p-BM-Aqk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="10"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93333333330000001" green="0.47058823529999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dV1-1j-gFZ" customClass="CQPhotoPickerFlowlayout" customModule="CQWB_SWIFT" customModuleProvider="target">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="Cell" reuseIdentifier="Cell" id="hvc-g9-d6m" customClass="CQPhotoPickerCell" customModule="CQWB_SWIFT" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhf-M4-jvz" userLabel="添加图片">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <state key="normal" backgroundImage="compose_pic_add"/>
+                                            <connections>
+                                                <action selector="addImageClick:" destination="hvc-g9-d6m" eventType="touchUpInside" id="eeU-27-pA0"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLw-ga-yBy" userLabel="移除图片">
+                                            <rect key="frame" x="76" y="0.0" width="24" height="24"/>
+                                            <state key="normal" image="compose_photo_close"/>
+                                            <connections>
+                                                <action selector="removeBtnClick:" destination="hvc-g9-d6m" eventType="touchUpInside" id="CXf-ut-eMP"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="xhf-M4-jvz" firstAttribute="top" secondItem="hvc-g9-d6m" secondAttribute="top" id="5Oh-I4-5yG"/>
+                                    <constraint firstItem="xhf-M4-jvz" firstAttribute="leading" secondItem="hvc-g9-d6m" secondAttribute="leading" id="Bvy-Ua-VgU"/>
+                                    <constraint firstAttribute="bottom" secondItem="xhf-M4-jvz" secondAttribute="bottom" id="K7t-bX-0za"/>
+                                    <constraint firstAttribute="trailing" secondItem="xhf-M4-jvz" secondAttribute="trailing" id="Vvc-bD-xWt"/>
+                                    <constraint firstItem="PLw-ga-yBy" firstAttribute="top" secondItem="hvc-g9-d6m" secondAttribute="top" id="aUZ-ub-cfz"/>
+                                    <constraint firstAttribute="trailing" secondItem="PLw-ga-yBy" secondAttribute="trailing" id="laY-tL-hjK"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="bgImageView" destination="xhf-M4-jvz" id="L8n-Wx-pij"/>
+                                    <outlet property="removeBtn" destination="PLw-ga-yBy" id="4FL-fK-yEJ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="mrc-QV-eIc" id="g7L-eo-9b3"/>
+                            <outlet property="delegate" destination="mrc-QV-eIc" id="g8G-Ke-cWh"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JME-j0-Sdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="536"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compose_addbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background" width="24" height="24"/>
+        <image name="compose_photo_close" width="24" height="24"/>
+        <image name="compose_pic_add" width="70" height="70"/>
+        <image name="compose_toolbar_picture" width="24" height="24"/>
+        <image name="compose_trendbutton_background" width="24" height="24"/>
+    </resources>
+</document>

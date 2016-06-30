@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CQBrowserViewController" customModule="CQWB_SWIFT" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="vKy-3X-N35" id="flb-xa-T2t"/>
+                <outlet property="flowLayout" destination="35l-mm-tBN" id="UqY-Cw-1XO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vKy-3X-N35">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="35l-mm-tBN">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="EH8-lL-zLW"/>
+                        <outlet property="delegate" destination="-1" id="Fed-HB-XYd"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhb-Jg-Lhs">
+                    <rect key="frame" x="500" y="546" width="80" height="34"/>
+                    <color key="backgroundColor" red="0.41874731529999998" green="0.26673506940000002" blue="0.27320392630000001" alpha="0.59999027490000001" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="l5n-V4-Bx1"/>
+                    </constraints>
+                    <state key="normal" title="保存"/>
+                    <connections>
+                        <action selector="saveClick:" destination="-1" eventType="touchUpInside" id="8KA-9b-92J"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1e-hn-3dM">
+                    <rect key="frame" x="20" y="546" width="80" height="34"/>
+                    <color key="backgroundColor" red="0.41874731529209619" green="0.26673506941248115" blue="0.27320392634929086" alpha="0.59999027489626555" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="vud-NY-ZnP"/>
+                    </constraints>
+                    <state key="normal" title="关闭"/>
+                    <connections>
+                        <action selector="closeClick:" destination="-1" eventType="touchUpInside" id="7lc-sW-sqf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="p1e-hn-3dM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="2r2-Fr-9dB"/>
+                <constraint firstAttribute="bottom" secondItem="p1e-hn-3dM" secondAttribute="bottom" constant="20" id="9KY-F7-4To"/>
+                <constraint firstAttribute="bottom" secondItem="Fhb-Jg-Lhs" secondAttribute="bottom" constant="20" id="KPf-LN-nPe"/>
+                <constraint firstItem="vKy-3X-N35" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="d5h-rP-xvu"/>
+                <constraint firstAttribute="trailing" secondItem="vKy-3X-N35" secondAttribute="trailing" id="e2B-lq-CYA"/>
+                <constraint firstAttribute="bottom" secondItem="vKy-3X-N35" secondAttribute="bottom" id="m1E-cy-arg"/>
+                <constraint firstAttribute="trailing" secondItem="Fhb-Jg-Lhs" secondAttribute="trailing" constant="20" id="r93-Hn-gGF"/>
+                <constraint firstItem="vKy-3X-N35" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yIk-Sl-miO"/>
+            </constraints>
+            <point key="canvasLocation" x="454" y="265"/>
+        </view>
+    </objects>
+</document>
